@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Lucas/Biopark/Prog/Projeto Final/Sistema-de-Gest-o-de-Loja-C-",
-      "program": "c:/Lucas/Biopark/Prog/Projeto Final/Sistema-de-Gest-o-de-Loja-C-/build/Debug/outDebug",
+      "cwd": ".",
+      "program": "${workspaceFolder}/Sistema_de_Gestao_de_Loja",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
