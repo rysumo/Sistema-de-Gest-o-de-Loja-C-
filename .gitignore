@@ -1,0 +1,11 @@
+# Executáveis
+*.exe
+*.out
+sistema_loja
+
+# Objetos de compilação
+*.o
+
+# IDE
+.vscode/
+*.code-workspace
