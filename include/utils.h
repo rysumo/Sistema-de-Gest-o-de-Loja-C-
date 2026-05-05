@@ -2,6 +2,9 @@
 #define UTILS_H
 
 void exibirSeparador();
-void exibirCabecalho(char* titulo);
+void limparBuffer();
+void pausar();
+void limparTela();
+void menuPrincipal();
 
 #endif
