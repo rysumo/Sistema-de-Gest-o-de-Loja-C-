@@ -13,7 +13,6 @@ typedef struct {
 extern Produto produtos[MAX_PRODUTOS];
 extern int totalProdutos;
 
-void cadastrarProduto();
 void listarProdutos();
 
 #endif

@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "../include/utils.h"
+#include "../include/produto.h"
+#include "../include/cliente.h"
+#include "../include/venda.h"
+#include "../include/relatorio.h"
+
 
 void limparTela() {
 #ifdef _WIN32
@@ -12,6 +18,12 @@ void limparTela() {
 
 void exibirSeparador() {
     printf("------------------------------------------------------------\n");
+}
+
+void exibirCabecalho(const char *titulo) {
+    exibirSeparador();
+    printf("%s\n", titulo);
+    exibirSeparador();
 }
 
 void limparBuffer() {
@@ -54,11 +66,10 @@ void menuPrincipal() {
                 break;
             case 2:
                 printf("\n--- Listagem de Produtos ---\n");
-                // TODO: listarProdutos(); (Membro 3)
+                listarProdutos();
                 break;
             case 3:
                 printf("\n--- Cadastro de Clientes ---\n");
-                // TODO: cadastrarCliente(); (Membro 4)
                 break;
             case 4:
                 printf("\n--- Listagem de Clientes ---\n");
