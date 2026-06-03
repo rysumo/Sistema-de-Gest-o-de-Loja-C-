@@ -21,7 +21,7 @@ echo Compilando os arquivos do projeto...
 echo.
 
 :: Navega até o diretório do projeto para usar os caminhos relativos corretos
-::pushd "%~dp0Sistema-de-Gest-o-de-Loja-C-"
+pushd "%~dp0Sistema-de-Gest-o-de-Loja-C-"
 
 :: Executa a compilação com GCC
 gcc -Wall -I include src/main.c src/utils.c src/produto.c src/cliente.c src/venda.c src/relatorio.c -o sistema_loja.exe
@@ -45,7 +45,7 @@ if %errorlevel% equ 0 (
         echo.
         echo Iniciando o sistema...
         echo.
-        .\sistema_loja.exe
+        "%~dp0Sistema-de-Gest-o-de-Loja-C-\sistema_loja.exe"
     )
 ) else (
     echo.
