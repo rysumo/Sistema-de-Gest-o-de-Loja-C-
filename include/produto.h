@@ -14,5 +14,6 @@ extern Produto produtos[MAX_PRODUTOS];
 extern int totalProdutos;
 
 void listarProdutos();
+void cadastrarProduto();
 
 #endif

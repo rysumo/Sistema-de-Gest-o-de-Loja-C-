@@ -14,5 +14,6 @@ extern Cliente clientes[MAX_CLIENTES];
 extern int totalClientes;
 
 void cadastrarCliente();
+void listarClientes();
 
 #endif

@@ -62,7 +62,7 @@ void menuPrincipal() {
         switch (opcao) {
             case 1:
                 printf("\n--- Cadastro de Produtos ---\n");
-                // TODO: cadastrarProduto(); (Membro 2)
+                cadastrarProduto();
                 break;
             case 2:
                 printf("\n--- Listagem de Produtos ---\n");
@@ -73,7 +73,7 @@ void menuPrincipal() {
                 break;
             case 4:
                 printf("\n--- Listagem de Clientes ---\n");
-                // TODO: listarClientes(); (Membro 3)
+                listarClientes();
                 break;
             case 5:
                 printf("\n--- Realizar Venda ---\n");
@@ -81,7 +81,7 @@ void menuPrincipal() {
                 break;
             case 6:
                 printf("\n--- Relatorio Geral ---\n");
-                // TODO: exibirRelatorioGeral(); (Membro 6)
+                exibirRelatorioGeral();
                 break;
             case 7:
                 printf("\nSaindo do sistema. Ate logo!\n");

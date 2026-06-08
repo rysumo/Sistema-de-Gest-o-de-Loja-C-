@@ -9,7 +9,6 @@
 
 void listarClientes() {
 
-
     exibirCabecalho("Lista de Clientes");
 
     if (totalClientes == 0) {
@@ -24,15 +23,10 @@ void listarClientes() {
             printf("CPF       : %s\n", clientes[i].cpf);
             printf("Telefone  : %s\n", clientes[i].telefone);
             printf("Cidade    : %s\n", clientes[i].cidade);
-            
 
             exibirSeparador();
         }
     }
-
-    printf("\nPressione Enter para voltar ao menu...");
-
-    getchar();
 }
 
 

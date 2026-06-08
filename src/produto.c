@@ -5,29 +5,22 @@
 
 // Membro 2 — Implementar cadastrarProduto() aqui
 
-#include <stdio.h>
-#include <string.h>
+void cadastrarProduto() {
+    if (totalProdutos >= MAX_PRODUTOS) {
+        printf("Erro: Limite maximo de produtos atingido.\n");
+        return;
+    }
 
-struct Produto {
-    int codigo;
-    char nome[100];
-    float preco;
-    int quantidade;
-};
-
-int main() {
-    struct Produto produto;
-    int codigos[100];
-    int totalProdutos = 0;
+    Produto novoProduto = {0};
     int codigoDuplicado;
 
     printf("Digite o código do produto: ");
-    scanf("%d", &produto.codigo);
+    scanf("%d", &novoProduto.id);
 
     codigoDuplicado = 0;
 
     for (int i = 0; i < totalProdutos; i++) {
-        if (codigos[i] == produto.codigo) {
+        if (produtos[i].id == novoProduto.id) {
             codigoDuplicado = 1;
             break;
         }
@@ -35,34 +28,35 @@ int main() {
 
     if (codigoDuplicado) {
         printf("Erro: código já cadastrado.\n");
-        return 1;
+        limparBuffer();
+        return;
     }
 
-    getchar();
+    limparBuffer();
 
     printf("Digite o nome do produto: ");
-    fgets(produto.nome, sizeof(produto.nome), stdin);
+    fgets(novoProduto.nome, sizeof(novoProduto.nome), stdin);
 
-    produto.nome[strcspn(produto.nome, "\n")] = '\0';
+    novoProduto.nome[strcspn(novoProduto.nome, "\n")] = '\0';
 
     printf("Digite o preço do produto: ");
-    scanf("%f", &produto.preco);
+    scanf("%f", &novoProduto.preco);
 
     do {
         printf("Digite a quantidade do produto: ");
-        scanf("%d", &produto.quantidade);
+        scanf("%d", &novoProduto.quantidade);
 
-        if (produto.quantidade < 0) {
+        if (novoProduto.quantidade < 0) {
             printf("Quantidade nao pode ser negativa.\n");
         }
-    } while (produto.quantidade < 0);
+    } while (novoProduto.quantidade < 0);
 
-    codigos[totalProdutos] = produto.codigo;
+    limparBuffer();
+
+    produtos[totalProdutos] = novoProduto;
     totalProdutos++;
 
     printf("Cadastro realizado com sucesso.\n");
-
-    return 0;
 }
 
 // Membro 3 — Implementar listarProdutos() aqui
@@ -86,10 +80,5 @@ void listarProdutos() {
             exibirSeparador();
         }
     }
-
-    printf("\nPressione Enter para voltar ao menu...");
-
-    getchar();
-
 }
 
