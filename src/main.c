@@ -18,7 +18,7 @@ int totalClientes = 0;
 
 
 int main() {
-    setlocale(LC_ALL, "Portuguese");
+    setlocale(LC_ALL, ".UTF-8");
     
     menuPrincipal();
     
