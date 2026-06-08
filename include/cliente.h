@@ -4,6 +4,7 @@
 #define MAX_CLIENTES 100
 
 typedef struct {
+    int id;
     char cpf[15];
     char nome[50];
     char telefone[20];
