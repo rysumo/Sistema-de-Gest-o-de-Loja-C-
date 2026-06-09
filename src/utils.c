@@ -77,7 +77,7 @@ void menuPrincipal() {
                 break;
             case 5:
                 printf("\n--- Realizar Venda ---\n");
-                // TODO: realizarVenda(); (Membro 5)
+                realizarVenda();
                 break;
             case 6:
                 printf("\n--- Relatorio Geral ---\n");
