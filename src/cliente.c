@@ -3,13 +3,6 @@
 #include "../include/cliente.h"
 #include "../include/utils.h"
 
-// Função auxiliar para remover \n do final da string
-void limpar_newline(char *str) {
-    int len = strlen(str);
-    if (len > 0 && str[len - 1] == '\n')
-        str[len - 1] = '\0';
-}
-
 // Membro 4 — Implementar cadastrarCliente() aqui
 void cadastrarCliente() {
     if (totalClientes >= MAX_CLIENTES) {

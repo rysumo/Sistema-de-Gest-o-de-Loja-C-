@@ -7,5 +7,6 @@ void limparBuffer();
 void pausar();
 void limparTela();
 void menuPrincipal();
+void limpar_newline(char *str);
 
 #endif

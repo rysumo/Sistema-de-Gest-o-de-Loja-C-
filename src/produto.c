@@ -15,7 +15,11 @@ void cadastrarProduto() {
     int codigoDuplicado;
 
     printf("Digite o código do produto: ");
-    scanf("%d", &novoProduto.id);
+    if (scanf("%d", &novoProduto.id) != 1) {
+        printf("Erro: Código deve ser um número inteiro válido.\n");
+        limparBuffer();
+        return;
+    }
 
     codigoDuplicado = 0;
 
@@ -36,20 +40,32 @@ void cadastrarProduto() {
 
     printf("Digite o nome do produto: ");
     fgets(novoProduto.nome, sizeof(novoProduto.nome), stdin);
-
-    novoProduto.nome[strcspn(novoProduto.nome, "\n")] = '\0';
+    if (strchr(novoProduto.nome, '\n') == NULL) {
+        limparBuffer();
+    } else {
+        novoProduto.nome[strcspn(novoProduto.nome, "\n")] = '\0';
+    }
 
     printf("Digite o preço do produto: ");
-    scanf("%f", &novoProduto.preco);
+    if (scanf("%f", &novoProduto.preco) != 1 || novoProduto.preco <= 0) {
+        printf("Erro: Preço inválido. Deve ser um número positivo.\n");
+        limparBuffer();
+        return;
+    }
 
+    int scanResult;
     do {
         printf("Digite a quantidade do produto: ");
-        scanf("%d", &novoProduto.quantidade);
+        scanResult = scanf("%d", &novoProduto.quantidade);
 
-        if (novoProduto.quantidade < 0) {
+        if (scanResult != 1) {
+            printf("Erro: Digite apenas numeros inteiros.\n");
+            limparBuffer();
+            novoProduto.quantidade = -1;
+        } else if (novoProduto.quantidade < 0) {
             printf("Quantidade nao pode ser negativa.\n");
         }
-    } while (novoProduto.quantidade < 0);
+    } while (scanResult != 1 || novoProduto.quantidade < 0);
 
     limparBuffer();
 

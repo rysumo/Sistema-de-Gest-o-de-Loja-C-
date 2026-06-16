@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "../include/utils.h"
 #include "../include/produto.h"
@@ -34,6 +35,13 @@ void limparBuffer() {
 void pausar() {
     printf("\nPressione Enter para continuar...");
     limparBuffer();
+}
+
+// Função auxiliar para remover \n do final da string
+void limpar_newline(char *str) {
+    int len = strlen(str);
+    if (len > 0 && str[len - 1] == '\n')
+        str[len - 1] = '\0';
 }
 
 void menuPrincipal() {
