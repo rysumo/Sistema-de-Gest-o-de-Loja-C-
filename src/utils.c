@@ -70,6 +70,7 @@ void menuPrincipal() {
                 break;
             case 3:
                 printf("\n--- Cadastro de Clientes ---\n");
+                cadastrarCliente();
                 break;
             case 4:
                 printf("\n--- Listagem de Clientes ---\n");
